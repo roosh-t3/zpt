@@ -76,7 +76,7 @@ class Chat extends Component {
     logoutHandler = (event) => {
         event.preventDefault();
 
-        this.props.onLogout();
+        this.props.onLogout(this.props.user);
     };
 
     changeHandler = event => {
@@ -159,7 +159,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         onFetchUsers: () => dispatch( actions.fetchUsers() ),
-        onLogout: () => dispatch( actions.logout() ),
+        onLogout: (user) => dispatch( actions.logout(user) ),
         onChatSend: (content) => dispatch( actions.sendMessage(content) ),
         onSelectUser: (user) => dispatch ( actions.initiateChat(user) )
     };

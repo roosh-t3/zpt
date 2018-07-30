@@ -76,7 +76,7 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.USER_LOGIN_START: return loginStart(state, action);
         case actionTypes.USER_LOGIN_SUCCESS: return loginSuccess(state, action);
         case actionTypes.USER_LOGIN_FAIL: return loginFail(state, action);
-        case actionTypes.USER_LOGOUT: return logout(state, action);
+        case actionTypes.USER_LOGOUT_SUCCESS: return logout(state, action);
         case actionTypes.USERS_FETCH_SUCCESS: return fetchUserSuccess(state, action);
         case actionTypes.INITIATE_CHAT: return initiateChat(state, action);
         case actionTypes.MESSAGE_SEND_START: return messageStart(state, action);

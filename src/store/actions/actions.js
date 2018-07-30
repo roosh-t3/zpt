@@ -27,9 +27,17 @@ export const loginFail = error => {
     };
 };
 
-export const logout = () => {
+export const logout = user => {
     return {
         type: actionTypes.USER_LOGOUT,
+        user: user,
+    };
+};
+
+
+export const logoutSuccess = () => {
+    return {
+        type: actionTypes.USER_LOGOUT_SUCCESS,
     };
 };
 

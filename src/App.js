@@ -1,21 +1,43 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component, Fragment} from 'react';
 import './App.css';
 
+import {connect} from 'react-redux'
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom'
+import Index from './pages/Index/Index'
+import Chat from './pages/Chat/Chat'
+
+
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+
+    render() {
+        let routes = (
+            <Switch>
+                <Route path="/" exact component={Index} />
+                <Redirect to="/" />
+            </Switch>
+        );
+        if(this.props.user !== null){
+            routes = (
+                <Switch>
+                    <Route path="/" exact component={Index}/>
+                    <Route path="/chat" exact component={Chat}/>
+                    <Redirect to="/" />
+                </Switch>
+            );
+        }
+
+        return (
+            <Fragment>
+                {routes}
+            </Fragment>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        user: state.user,
+    };
+};
+
+export default withRouter(connect(mapStateToProps, null)(App));

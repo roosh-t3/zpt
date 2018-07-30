@@ -1,0 +1,11 @@
+.chat_area_holder{
+    padding: 0 1vw;
+    position: relative;
+}
+
+.send_chat{
+    position: absolute !important;
+    bottom: -80px;
+    z-index: 100;
+    width: 100%;
+}

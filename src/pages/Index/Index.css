@@ -1,0 +1,17 @@
+.column-x {
+    max-width: 435px !important;
+}
+
+.grid-x {
+    height: 100%;
+}
+
+div#root{
+    height: 100%;
+}
+
+.basicColor{
+    background: none #fff !important;
+    color: #db2828 !important;
+    border-color: #db2828 !important;
+}

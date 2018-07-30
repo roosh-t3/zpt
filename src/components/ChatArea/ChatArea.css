@@ -1,0 +1,4 @@
+.chat_area {
+    overflow-x: auto;
+    height: calc(100vh - 12vw);
+}
